@@ -1,0 +1,1474 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE RDF
+        [
+                <!ENTITY sripas "http://www.inter-iot.eu/sripas#">
+                <!ENTITY var "http://www.inter-iot.eu/sripas#node_">
+                <!ENTITY sosa "http://www.w3.org/ns/sosa/">
+                <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+                <!ENTITY iiot "http://inter-iot.eu/GOIoTP#">
+                <!ENTITY iiotex "http://inter-iot.eu/GOIoTPex#">
+                <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+                <!ENTITY var "http://www.inter-iot.eu/sripas#node_">
+                <!ENTITY time "http://www.w3.org/2006/time#">
+                <!ENTITY pt "http://inter-iot.eu/syntax/WSO2Port#">
+                <!ENTITY logiserv "http://ontology.tno.nl/logiserv/">
+                <!ENTITY logico "http://ontology.tno.nl/logico/">
+                <!ENTITY vp "http://inter-iot.eu/LogVPmod#">
+                <!ENTITY geo-sf "http://www.opengis.net/def/sf/">
+                <!ENTITY ssn "http://www.w3.org/ns/ssn/">
+                ]
+        >
+<rdf:RDF   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+           xmlns:sripas="http://www.inter-iot.eu/sripas#"
+           xmlns="http://www.inter-iot.eu/sripas#"
+           xmlns:align="http://knowledgeweb.semanticweb.org/heterogeneity/alignment#"
+           xmlns:dcelem="http://purl.org/dc/elements/1.1/"
+           xmlns:exmo="http://exmo.inrialpes.fr/align/ext/1.0/#"
+           xmlns:var="http://www.inter-iot.eu/sripas#node_"
+           xmlns:sosa="http://www.w3.org/ns/sosa/"
+           xmlns:time="http://www.w3.org/2006/time#"
+           xmlns:pt="http://inter-iot.eu/syntax/WSO2Port#"
+           xmlns:iiot="http://inter-iot.eu/GOIoTP#"
+           xmlns:iiotex="http://inter-iot.eu/GOIoTPex#"
+           xmlns:logiserv="http://ontology.tno.nl/logiserv/"
+           xmlns:logico="http://ontology.tno.nl/logico/"
+           xmlns:vp="http://inter-iot.eu/LogVPmod#"
+           xmlns:geosparql="http://www.opengis.net/ont/geosparql#"
+           xmlns:ssn="http://www.w3.org/ns/ssn/"
+           xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+>
+    <align:Alignment>
+
+        <dcelem:title>Port_CO</dcelem:title>
+        <exmo:version>2.5</exmo:version>
+        <dcelem:creator>SRIPAS</dcelem:creator>
+        <dcelem:description>Alignment between port data and GIoTPex ontology. Change of ssn:Deployment to sosa:Platform and ssn:inDeployment to sosa:isHostedBy.</dcelem:description>
+
+        <align:xml>yes</align:xml>
+        <align:level>2IPSM</align:level>
+        <align:type>**</align:type>
+        <align:method>manual</align:method>
+        <dcelem:date>14-09-2018</dcelem:date>
+        <sripas:cellFormat>
+            <iiot:DataFormat rdf:about="http://inter-iot.eu/sripas#turtle" />
+        </sripas:cellFormat>
+
+        <align:onto1>
+            <align:Ontology rdf:about="http://inter-iot.eu/syntax/WSO2Port#">
+                <align:formalism>
+                    <align:Formalism align:name="OWL2.0" align:uri="http://www.w3.org/2002/07/owl#" />
+                </align:formalism>
+            </align:Ontology>
+        </align:onto1>
+        <align:onto2>
+            <align:Ontology rdf:about="http://inter-iot.eu/GOIoTPex#">
+                <align:formalism>
+                    <align:Formalism align:name="OWL2.0" align:uri="http://www.w3.org/2002/07/owl#" />
+                </align:formalism>
+            </align:Ontology>
+        </align:onto2>
+
+        <sripas:steps rdf:parseType="Collection">
+            <sripas:step sripas:order="1" sripas:cell="http://www.inter-iot.eu/sripas#1_entry_vehicle_event"/>
+            <sripas:step sripas:order="2" sripas:cell="http://www.inter-iot.eu/sripas#1_exit_vehicle_event"/>
+            <sripas:step sripas:order="3" sripas:cell="http://www.inter-iot.eu/sripas#1_exit_vehicle_event_lpr"/>
+            <sripas:step sripas:order="4" sripas:cell="http://www.inter-iot.eu/sripas#1_exit_vehicle_event_lprAlarm"/>
+            <sripas:step sripas:order="5" sripas:cell="http://www.inter-iot.eu/sripas#1_exit_vehicle_event_ocr"/>
+            <sripas:step sripas:order="6" sripas:cell="http://www.inter-iot.eu/sripas#1_exit_vehicle_event_ocrAlarm"/>
+            <sripas:step sripas:order="7" sripas:cell="http://www.inter-iot.eu/sripas#1_exit_vehicle_event_spire"/>
+            <sripas:step sripas:order="8" sripas:cell="http://www.inter-iot.eu/sripas#1_exit_vehicle_event_gateOpen"/>
+            <sripas:step sripas:order="9" sripas:cell="http://www.inter-iot.eu/sripas#1_exit_vehicle_event_quercusLpr"/>
+            <sripas:step sripas:order="10" sripas:cell="http://www.inter-iot.eu/sripas#1_exit_vehicle_event_quercusLprAlarm"/>
+            <sripas:step sripas:order="12" sripas:cell="http://www.inter-iot.eu/sripas#1_meteo_stations"/>
+            <sripas:step sripas:order="13" sripas:cell="http://www.inter-iot.eu/sripas#1_weather_measurement"/>
+            <sripas:step sripas:order="14" sripas:cell="http://www.inter-iot.eu/sripas#1_emission_cabin"/>
+            <sripas:step sripas:order="15" sripas:cell="http://www.inter-iot.eu/sripas#1_emission_measurement"/>
+            <sripas:step sripas:order="16" sripas:cell="http://www.inter-iot.eu/sripas#1_sound_meter"/>
+            <sripas:step sripas:order="17" sripas:cell="http://www.inter-iot.eu/sripas#1_sound_measurement"/>
+            <sripas:step sripas:order="18" sripas:cell="http://www.inter-iot.eu/sripas#1_lights"/>
+            <sripas:step sripas:order="19" sripas:cell="http://www.inter-iot.eu/sripas#1_presenceSensors"/>
+            <sripas:step sripas:order="20" sripas:cell="http://www.inter-iot.eu/sripas#1_presenceSensorObservations"/>
+            <sripas:step sripas:order="21" sripas:cell="http://www.inter-iot.eu/sripas#1_listDevices_emissions_sensor"/>
+            <sripas:step sripas:order="22" sripas:cell="http://www.inter-iot.eu/sripas#2_listDevices_lighting_actuator"/>
+            <sripas:step sripas:order="23" sripas:cell="http://www.inter-iot.eu/sripas#3_listDevices_presence_sensor"/>
+            <sripas:step sripas:order="24" sripas:cell="http://www.inter-iot.eu/sripas#4_listDevices_weather_sensor"/>
+            <sripas:step sripas:order="25" sripas:cell="http://www.inter-iot.eu/sripas#5_listDevices_sound_sensor"/>
+            <sripas:step sripas:order="26" sripas:cell="http://www.inter-iot.eu/sripas#6_listDevices_exit_sensor"/>
+            <sripas:step sripas:order="27" sripas:cell="http://www.inter-iot.eu/sripas#7_listDevices_entry_sensor"/>
+            <sripas:step sripas:order="28" sripas:cell="http://www.inter-iot.eu/sripas#7_listDevices_gate_sensor"/>
+            <sripas:step sripas:order="29" sripas:cell="http://www.inter-iot.eu/sripas#8_listDevices_clear"/>
+        </sripas:steps>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#1_entry_vehicle_event">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX a pt:entryVehicles ;
+                    pt:hasArray var:array .
+                    var:array a pt:Array ;
+                    pt:hasElement var:elem .
+                    var:elem a pt:Element ;
+                    pt:hasaccessId var:accessid ;
+                    pt:hascontainerNum1 var:contnum1 ;
+                    pt:hascontainerNum2 var:contnum2 ;
+                    pt:hascontainerReliability1 var:contrel1 ;
+                    pt:hascontainerReliability2 var:contrel2 ;
+                    pt:hasplate var:plate ;
+                    pt:hasreliability var:rel ;
+                    pt:hasdate var:date ;
+                    pt:haslane var:lane .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:truck a sosa:FeatureOfInterest, logico:Truck ;
+                    logiserv:involves var:CTX ;
+                    iiotex:hasLocalId var:plate .
+                    var:CTX a logiserv:Arrive ;
+                        iiotex:hasLocalId var:accessid ;
+                        logiserv:hasTime [
+                            a logico:Instant, time:Instant ;
+                                time:inXSDateTimeStamp var:date ;
+                        ] ;
+                        vp:hasLane var:lane .
+                    [ a vp:EntryVehicle, sosa:Observation ;
+                        sosa:hasFeatureOfInterest var:truck ;
+                        sosa:madeBySensor var:sensor ;
+                        sosa:hasResult [
+                            a sosa:Result, vp:PlateReading ;
+                            iiot:hasResultValue var:plate ;
+                            vp:hasReliability var:rel ;
+                        ] , [
+                        a sosa:Result, vp:Container1Reading ;
+                        iiot:hasResultValue var:contnum1 ;
+                        vp:hasReliability var:contrel1 ;
+                        ] , [
+                        a sosa:Result, vp:Container2Reading ;
+                        iiot:hasResultValue var:contnum2 ;
+                        vp:hasReliability var:contrel2 ;
+                        ] ;
+                        sosa:resultTime var:date
+                    ] .
+                    var:sensor a vp:EntrySensor, vp:GateSensor .
+                </align:entity2>
+                <align:relation>=</align:relation>
+                <sripas:transformation rdf:parseType="Literal">
+                    <function about="REPLACE">
+                        <param order="1" about="&sripas;node_plate"/>
+                        <param order="2" val=" "/>
+                        <param order="3" val="_"/>
+                        <return about="&sripas;node_plate_r"/>
+                    </function>
+                    <function about="CONCAT">
+                        <param order="1" val="http://www.inter-iot.eu/wso2port/entry/truck/"/>
+                        <param order="2" about="&sripas;node_plate_r"/>
+                        <return about="&sripas;node_truckId"/>
+                    </function>
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_truckId"/>
+                        <return about="&sripas;node_truck"/>
+                    </function>
+                    <function about="STR">
+                        <param order="1" about="&sripas;node_lane"/>
+                        <return about="&sripas;node_lane_str"/>
+                    </function>
+                    <function about="CONCAT">
+                        <param order="1" val="http://www.inter-iot.eu/wso2port/gate/"/>
+                        <param order="2" about="&sripas;node_lane_str"/>
+                        <return about="&sripas;node_laneId"/>
+                    </function>
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_laneId"/>
+                        <return about="&sripas;node_sensor"/>
+                    </function>
+                </sripas:transformation>
+                <sripas:typings rdf:parseType="Literal">
+                    <sripas:typing about="&sripas;node_date" datatype="&xsd;dateTimeStamp"/>
+                </sripas:typings>
+            </align:Cell>
+        </align:map>
+
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#1_exit_vehicle_event">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX a pt:exitVehicles ;
+                    pt:hasArray var:array .
+                    var:array a pt:Array ;
+                    pt:hasElement var:elem .
+                    var:elem a pt:Element ;
+                    pt:hasaccessId var:accessid ;
+                    pt:haslane var:lane .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX a logiserv:Depart ;
+                    vp:hasLane var:lane ;
+                    iiotex:hasLocalId var:accessid .
+                    [
+                        a vp:ExitVehicle, sosa:Observation ;
+                        sosa:madeBySensor var:sensor
+                    ] .
+                    var:sensor a vp:ExitSensor, vp:GateSensor .
+                </align:entity2>
+                <align:relation>=</align:relation>
+                <sripas:transformation rdf:parseType="Literal">
+                    <function about="STR">
+                        <param order="1" about="&sripas;node_lane"/>
+                        <return about="&sripas;node_lane_str"/>
+                    </function>
+                    <function about="CONCAT">
+                        <param order="1" val="http://www.inter-iot.eu/wso2port/gate/"/>
+                        <param order="2" about="&sripas;node_lane_str"/>
+                        <return about="&sripas;node_laneId"/>
+                    </function>
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_laneId"/>
+                        <return about="&sripas;node_sensor"/>
+                    </function>
+                </sripas:transformation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#1_exit_vehicle_event_lpr">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:Obs a sosa:Observation .
+                    var:CTZ a logiserv:Depart .
+                    var:CTX pt:haslprOk var:lprOk ;
+                    pt:haslprPlate var:plate1 ;
+                    pt:haslprReliability var:plate_rel1 ;
+                    pt:haslprDate var:plate_date1 .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:truck a sosa:FeatureOfInterest, logico:Truck ;
+                    iiotex:hasLocalId var:plate1 ;
+                    logiserv:involves var:CTZ .
+                    var:CTZ a logiserv:Depart .
+                    var:Obs a sosa:Observation ;
+                    sosa:hasFeatureOfInterest var:truck ;
+                    sosa:hasResult [
+                    a sosa:Result, vp:PlateReading ;
+                    iiot:hasResultValue var:plate1 ;
+                    vp:hasReliability var:plate_rel1 ;
+                    vp:resultTime var:plate_date1 ;
+                    vp:hasOk var:lprOk ;
+                    vp:hasReadingNumber 1;
+                    vp:hasSystem "Lpr"
+                    ] .
+                </align:entity2>
+                <align:relation>=</align:relation>
+                <sripas:transformation rdf:parseType="Literal">
+                    <function about="CONCAT">
+                        <param order="1" val="http://www.inter-iot.eu/wso2port/exit/truck/"/>
+                        <param order="2" about="&sripas;node_plate1"/>
+                        <return about="&sripas;node_truckId"/>
+                    </function>
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_truckId"/>
+                        <return about="&sripas;node_truck"/>
+                    </function>
+                </sripas:transformation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#1_exit_vehicle_event_lprAlarm">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:Obs a sosa:Observation .
+                    var:CTZ a logiserv:Depart .
+                    var:CTX pt:haslprAlarmOk var:lprAlarmOk ;
+                    pt:haslprAlarmPlate var:plate2 ;
+                    pt:haslprAlarmReliability var:plate_rel2 ;
+                    pt:haslprAlarmDate var:plate_date2 .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:truck a sosa:FeatureOfInterest, logico:Truck ;
+                    iiotex:hasLocalId var:plate2 ;
+                    logiserv:involves var:CTZ .
+                    var:CTZ a logiserv:Depart .
+                    var:Obs a sosa:Observation ;
+                    sosa:hasFeatureOfInterest var:truck ;
+                    sosa:hasResult [
+                        a sosa:Result, vp:PlateReading ;
+                        iiot:hasResultValue var:plate2 ;
+                        vp:hasReliability var:plate_rel2 ;
+                        vp:resultTime var:plate_date2 ;
+                        vp:hasOk var:lprAlarmOk ;
+                        vp:hasReadingNumber 2;
+                        vp:hasSystem "Lpr"
+                    ] .
+                </align:entity2>
+                <align:relation>=</align:relation>
+                <sripas:transformation rdf:parseType="Literal">
+                    <function about="CONCAT">
+                        <param order="1" val="http://www.inter-iot.eu/wso2port/exit/truck/"/>
+                        <param order="2" about="&sripas;node_plate2"/>
+                        <return about="&sripas;node_truckId"/>
+                    </function>
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_truckId"/>
+                        <return about="&sripas;node_truck"/>
+                    </function>
+                </sripas:transformation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#1_exit_vehicle_event_ocr">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:Obs a sosa:Observation .
+                    var:CTX pt:hasocrOk var:ocrOk ;
+                    pt:hasocrDate var:ocrDate ;
+                    pt:hasocrContainerNum1 var:contnum1 ;
+                    pt:hasocrContainerNum2 var:contnum2 ;
+                    pt:hasocrContainerReliability1 var:contrel1 ;
+                    pt:hasocrContainerReliability2 var:contrel2 .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:Obs a sosa:Observation ;
+                    sosa:hasResult  [
+                    a sosa:Result, vp:Container1Reading ;
+                    iiot:hasResultValue var:contnum1 ;
+                    vp:hasReliability var:contrel1 ;
+                    vp:resultTime var:ocrDate ;
+                    vp:hasOk var:ocrOk ;
+                    vp:hasReadingNumber 1;
+                    vp:hasSystem "ocr"
+                    ], [
+                    a sosa:Result, vp:Container2Reading ;
+                    iiot:hasResultValue var:contnum2 ;
+                    vp:hasReliability var:contrel2 ;
+                    vp:resultTime var:ocrDate ;
+                    vp:hasOk var:ocrOk ;
+                    vp:hasReadingNumber 1;
+                    vp:hasSystem "ocr"
+                    ] .
+                </align:entity2>
+                <align:relation>=</align:relation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#1_exit_vehicle_event_ocrAlarm">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:Obs a sosa:Observation .
+                    var:CTX pt:hasocrAlarmOk var:ocrAlarmOk ;
+                    pt:hasocrAlarmDate var:ocrAlarmDate ;
+                    pt:hasocrAlarmContainerNum1 var:contnum3 ;
+                    pt:hasocrAlarmContainerNum2 var:contnum4 ;
+                    pt:hasocrAlarmContainerReliability1 var:contrel3 ;
+                    pt:hasocrAlarmContainerReliability2 var:contrel4 ;
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:Obs a sosa:Observation ;
+                    sosa:hasResult  [
+                        a sosa:Result, vp:Container1Reading ;
+                        iiot:hasResultValue var:contnum3 ;
+                        vp:hasReliability var:contrel3 ;
+                        vp:resultTime var:ocrAlarmDate ;
+                        vp:hasOk var:ocrAlarmOk ;
+                        vp:hasReadingNumber 2;
+                        vp:hasSystem "ocr"
+                    ],
+                    [
+                        a sosa:Result, vp:Container2Reading ;
+                        iiot:hasResultValue var:contnum4 ;
+                        vp:hasReliability var:contrel4 ;
+                        vp:resultTime var:ocrAlarmDate ;
+                        vp:hasOk var:ocrAlarmOk ;
+                        vp:hasReadingNumber 2;
+                        vp:hasSystem "ocr"
+                    ] .
+                </align:entity2>
+                <align:relation>=</align:relation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#1_exit_vehicle_event_quercusLpr">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:Obs a sosa:Observation .
+                    var:CTX pt:hasquercusLprOk var:quercusLprOk ;
+                    pt:hasquercusLprPlate var:plate3 ;
+                    pt:hasquercusLprReliability var:plate_rel3 ;
+                    pt:hasquercusLprDate var:plate_date3 .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:Obs a sosa:Observation ;
+                    sosa:hasResult  [
+                        a sosa:Result, vp:PlateReading ;
+                        iiot:hasResultValue var:plate3 ;
+                        vp:hasReliability var:plate_rel3 ;
+                        vp:resultTime var:plate_date3 ;
+                        vp:hasOk var:quercusLprOk ;
+                        vp:hasReadingNumber 1;
+                        vp:hasSystem "QuercusLpr"
+                    ] .
+                </align:entity2>
+                <align:relation>=</align:relation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#1_exit_vehicle_event_quercusLprAlarm">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:Obs a sosa:Observation .
+                    var:CTX pt:hasquercusLprAlarmOk var:quercusLprAlarmOk ;
+                    pt:hasquercusLprAlarmPlate var:plate4 ;
+                    pt:hasquercusLprAlarmReliability var:plate_rel4 ;
+                    pt:hasquercusLprAlarmDate var:plate_date4 .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:Obs a sosa:Observation ;
+                    sosa:hasResult    [
+                        a sosa:Result, vp:PlateReading ;
+                        iiot:hasResultValue var:plate4 ;
+                        vp:hasReliability var:plate_rel4 ;
+                        vp:resultTime var:plate_date4 ;
+                        vp:hasOk var:quercusLprAlarmOk ;
+                        vp:hasReadingNumber 2;
+                        vp:hasSystem "QuercusLpr"
+                    ] .
+                </align:entity2>
+                <align:relation>=</align:relation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#1_exit_vehicle_event_spire">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX a logiserv:Depart .
+                    var:CTY  pt:hasspire var:spire .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX a logiserv:Depart ;
+                    vp:hasSpire [
+                    a logico:Instant, time:Instant ;
+                    time:inXSDateTimeStamp var:spire
+                    ] .
+                </align:entity2>
+                <align:relation>=</align:relation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#1_exit_vehicle_event_gateOpen">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX a logiserv:Depart .
+                    var:CTY  pt:hasgateOpen var:gateopen .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX a logiserv:Depart ;
+                    vp:hasGateOpen [
+                    a logico:Instant, time:Instant ;
+                    time:inXSDateTimeStamp var:gateopen
+                    ] .
+                </align:entity2>
+                <align:relation>=</align:relation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#1_meteo_stations">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX a pt:meteoStations ;
+                    pt:hasArray var:array .
+                    var:array a pt:Array ;
+                    pt:hasElement var:elem .
+                    var:elem a pt:Element ;
+                    pt:hasactive var:active ;
+                    pt:haslatitude var:lat ;
+                    pt:haslocation var:loc ;
+                    pt:haslongitude var:long ;
+                    pt:hasmeteoStationId var:id ;
+                    pt:hasname var:name ;
+                    pt:hasportId var:portid .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:station a vp:MeteoStation, iiot:IoTDevice, sosa:Sensor ;
+                    vp:isActive var:active ;
+                    iiotex:hasLocalId var:id ;
+                    iiot:hasName var:name ;
+                    sosa:isHostedBy [
+                        a vp:Port, sosa:Platform ;
+                        iiotex:hasLocalId var:portid
+                    ] ;
+                    iiot:hasLocation [
+                        a iiot:Location ;
+                        geosparql:asWKT var:geo ;
+                        iiot:hasDescription var:loc
+                    ] .
+                </align:entity2>
+                <align:relation>=</align:relation>
+                <sripas:transformation rdf:parseType="Literal">
+                    <function about="str">
+                        <param order="1" about="&sripas;node_id"/>
+                        <return about="&sripas;node_sid"/>
+                    </function>
+                    <function about="CONCAT">
+                        <param order="1" val="http://www.inter-iot.eu/wso2port/weather/stations/"/>
+                        <param order="2" about="&sripas;node_sid"/>
+                        <return about="&sripas;node_id_uri"/>
+                    </function>
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_id_uri"/>
+                        <return about="&sripas;node_station"/>
+                    </function>
+                    <function about="str">
+                        <param order="1" about="&sripas;node_lat"/>
+                        <return about="&sripas;node_slat"/>
+                    </function>
+                    <function about="str">
+                        <param order="1" about="&sripas;node_long"/>
+                        <return about="&sripas;node_slong"/>
+                    </function>
+                    <function about="concat">
+                        <param order="1" val="Point("/>
+                        <param order="2" about="&sripas;node_slat"/>
+                        <param order="3" val=" "/>
+                        <param order="4" about="&sripas;node_slong"/>
+                        <param order="5" val=")"/>
+                        <return about="&sripas;node_geo"/>
+                    </function>
+                </sripas:transformation>
+                <sripas:filters rdf:parseType="Literal">
+                    <filter about="&sripas;node_lat" datatype="&xsd;float"/>
+                    <filter about="&sripas;node_long" datatype="&xsd;float"/>
+                    <filter about="&sripas;node_slat" datatype="&xsd;string"/>
+                    <filter about="&sripas;node_slong" datatype="&xsd;string"/>
+                </sripas:filters>
+                <sripas:typings rdf:parseType="Literal">
+                    <typing about="&sripas;node_geo" datatype="&geo-sf;wktLiteral"/>
+                </sripas:typings>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#1_weather_measurement">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX a pt:weatherMeasurements ;
+                    pt:hasArray var:array .
+                    var:array a pt:Array ;
+                    pt:hasElement var:elem .
+                    var:elem a pt:Element ;
+                    pt:hasmeasurementId var:meas_id ;
+                    pt:hasmeteoStationId var:station_id ;
+                    pt:hasdate var:date ;
+                    pt:haswindSpeed var:speed ;
+                    pt:haswindDirection var:direct ;
+                    pt:hasaverageTemperature var:temp ;
+                    pt:hashumidity var:hum ;
+                    pt:hasprecipitation var:prep ;
+                    pt:hasseaTemperature var:seatemp ;
+                    pt:hassolarRadiation var:rad ;
+                    pt:haspressure var:pressure .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:station a vp:MeteoStation, iiot:IoTDevice, sosa:Sensor ;
+                    iiotex:hasLocalId var:station_id .
+                    var:measurment a sosa:Observation, vp:WeatherMeasurement ;
+                    iiotex:hasLocalId var:meas_id ;
+                    sosa:madeBySensor var:station ;
+                    sosa:hasResult [
+                        a sosa:Result, vp:WindSpeed ;
+                        iiot:hasResultValue var:speed
+                    ], [
+                    a sosa:Result, vp:WindDirection ;
+                    iiot:hasResultValue var:direct
+                    ], [
+                    a sosa:Result, vp:AverageTemperature ;
+                    iiot:hasResultValue var:temp
+                    ], [
+                    a sosa:Result, vp:AverageHumidity ;
+                    iiot:hasResultValue var:hum
+                    ], [
+                    a sosa:Result, vp:Precipitation ;
+                    iiot:hasResultValue var:prep
+                    ], [
+                    a sosa:Result, vp:SeaTemperature ;
+                    iiot:hasResultValue var:seatemp
+                    ],[
+                    a sosa:Result, vp:Radiation ;
+                    iiot:hasResultValue var:rad
+                    ], [
+                    a sosa:Result, vp:Pressure ;
+                    iiot:hasResultValue var:pressure
+                    ] ;
+                    sosa:resultTime var:date .
+                </align:entity2>
+                <align:relation>=</align:relation>
+                <sripas:transformation rdf:parseType="Literal">
+                    <function about="str">
+                        <param order="1" about="&sripas;node_station_id"/>
+                        <return about="&sripas;node_sid"/>
+                    </function>
+                    <function about="CONCAT">
+                        <param order="1" val="http://www.inter-iot.eu/wso2port/weather/stations/"/>
+                        <param order="2" about="&sripas;node_sid"/>
+                        <return about="&sripas;node_id_uri"/>
+                    </function>
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_id_uri"/>
+                        <return about="&sripas;node_station"/>
+                    </function>
+                    <function about="str">
+                        <param order="1" about="&sripas;node_meas_id"/>
+                        <return about="&sripas;node_mid"/>
+                    </function>
+                    <function about="CONCAT">
+                        <param order="1" about="&sripas;node_id_uri"/>
+                        <param order="1" val="/"/>
+                        <param order="2" about="&sripas;node_mid"/>
+                        <return about="&sripas;node_meas_id_uri"/>
+                    </function>
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_meas_id_uri"/>
+                        <return about="&sripas;node_measurment"/>
+                    </function>
+                </sripas:transformation>
+                <sripas:typings rdf:parseType="Literal">
+                    <sripas:typing about="&sripas;node_date" datatype="&xsd;dateTimeStamp"/>
+                </sripas:typings>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#1_emission_cabin">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX a pt:emissionCabins ;
+                    pt:hasArray var:array .
+                    var:array a pt:Array ;
+                    pt:hasElement var:elem .
+                    var:elem a pt:Element ;
+                    pt:haslatitude var:lat ;
+                    pt:haslongitude var:long ;
+                    pt:hasemissionCabinId var:id ;
+                    pt:hasname var:name ;
+                    pt:hasdescription var:desc ;
+                    pt:hasportId var:portid .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:station a iiot:IoTDevice, sosa:Sensor, vp:EmissionCabin ;
+                    iiotex:hasLocalId var:id ;
+                    iiot:hasName var:name ;
+                    iiot:hasDescription var:desc ;
+                    sosa:isHostedBy [
+                        a vp:Port, sosa:Platform ;
+                        iiotex:hasLocalId var:portid
+                    ] ;
+                    iiot:hasLocation [
+                        a iiot:Location ;
+                        geosparql:asWKT var:geo
+                    ] .
+                </align:entity2>
+                <align:relation>=</align:relation>
+                <sripas:transformation rdf:parseType="Literal">
+                    <function about="str">
+                        <param order="1" about="&sripas;node_id"/>
+                        <return about="&sripas;node_sid"/>
+                    </function>
+                    <function about="CONCAT">
+                        <param order="1" val="http://www.inter-iot.eu/wso2port/emission/cabins/"/>
+                        <param order="2" about="&sripas;node_sid"/>
+                        <return about="&sripas;node_id_uri"/>
+                    </function>
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_id_uri"/>
+                        <return about="&sripas;node_station"/>
+                    </function>
+                    <function about="str">
+                        <param order="1" about="&sripas;node_lat"/>
+                        <return about="&sripas;node_slat"/>
+                    </function>
+                    <function about="str">
+                        <param order="1" about="&sripas;node_long"/>
+                        <return about="&sripas;node_slong"/>
+                    </function>
+                    <function about="concat">
+                        <param order="1" val="Point("/>
+                        <param order="2" about="&sripas;node_slat"/>
+                        <param order="3" val=" "/>
+                        <param order="4" about="&sripas;node_slong"/>
+                        <param order="5" val=")"/>
+                        <return about="&sripas;node_geo"/>
+                    </function>
+                </sripas:transformation>
+                <sripas:filters rdf:parseType="Literal">
+                    <filter about="&sripas;node_lat" datatype="&xsd;float"/>
+                    <filter about="&sripas;node_long" datatype="&xsd;float"/>
+                    <filter about="&sripas;node_slat" datatype="&xsd;string"/>
+                    <filter about="&sripas;node_slong" datatype="&xsd;string"/>
+                </sripas:filters>
+                <sripas:typings rdf:parseType="Literal">
+                    <typing about="&sripas;node_geo" datatype="&geo-sf;wktLiteral"/>
+                </sripas:typings>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#1_emission_measurement">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX a pt:emissionMeasurements ;
+                    pt:hasArray var:array .
+                    var:array a pt:Array ;
+                    pt:hasElement var:elem .
+                    var:elem a pt:Element ;
+                    pt:hasmeasurementId var:meas_id ;
+                    pt:hasemissionCabinId var:cabin_id ;
+                    pt:hasdate var:date ;
+                    pt:hasco var:co ;
+                    pt:hasno var:no ;
+                    pt:hasno2 var:no2 ;
+                    pt:hasnox var:nox ;
+                    pt:hasso2 var:so2 ;
+                    pt:hasparticlesConcentration var:pc .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:measurment a sosa:Observation, vp:EmissionMeasurement ;
+                    iiotex:hasLocalId var:meas_id ;
+                    sosa:resultTime var:date ;
+                    sosa:madeBySensor var:cabin ;
+                    sosa:hasResult [
+                        a vp:Emission_CO, sosa:Result ;
+                        iiot:hasResultValue var:co
+                    ], [
+                    a vp:Emission_NO, sosa:Result ;
+                    iiot:hasResultValue var:no
+                    ], [
+                    a vp:Emission_NO2, sosa:Result ;
+                    iiot:hasResultValue var:no2
+                    ], [
+                    a vp:Emission_NOX, sosa:Result ;
+                    iiot:hasResultValue var:nox
+                    ], [
+                    a vp:Emission_SO2, sosa:Result ;
+                    iiot:hasResultValue var:so2
+                    ], [
+                    a vp:ParticlesConcentration, sosa:Result ;
+                    iiot:hasResultValue var:pc
+                    ] .
+                    var:cabin a vp:EmissionCabin, iiot:IoTDevice, sosa:Sensor ;
+                    iiotex:hasLocalId var:cabin_id .
+                </align:entity2>
+                <align:relation>=</align:relation>
+                <sripas:transformation rdf:parseType="Literal">
+                    <function about="str">
+                        <param order="1" about="&sripas;node_cabin_id"/>
+                        <return about="&sripas;node_sid"/>
+                    </function>
+                    <function about="CONCAT">
+                        <param order="1" val="http://www.inter-iot.eu/wso2port/emission/cabins/"/>
+                        <param order="2" about="&sripas;node_sid"/>
+                        <return about="&sripas;node_id_uri"/>
+                    </function>
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_id_uri"/>
+                        <return about="&sripas;node_cabin"/>
+                    </function>
+                    <function about="str">
+                        <param order="1" about="&sripas;node_meas_id"/>
+                        <return about="&sripas;node_mid"/>
+                    </function>
+                    <function about="CONCAT">
+                        <param order="1" about="&sripas;node_id_uri"/>
+                        <param order="1" val="/"/>
+                        <param order="2" about="&sripas;node_mid"/>
+                        <return about="&sripas;node_meas_id_uri"/>
+                    </function>
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_meas_id_uri"/>
+                        <return about="&sripas;node_measurment"/>
+                    </function>
+                </sripas:transformation>
+                <sripas:typings rdf:parseType="Literal">
+                    <sripas:typing about="&sripas;node_date" datatype="&xsd;dateTimeStamp"/>
+                </sripas:typings>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#1_sound_meter">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX a pt:soundMeters ;
+                    pt:hasArray var:array .
+                    var:array a pt:Array ;
+                    pt:hasElement var:elem .
+                    var:elem a pt:Element ;
+                    pt:haslatitude var:lat ;
+                    pt:hasdescription var:desc ;
+                    pt:haslongitude var:long ;
+                    pt:hassoundMeterId var:id ;
+                    pt:hascabinId var:cabinid ;
+                    pt:hasportId var:portid .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:cabin a vp:SoundCabin, iiot:IoTDevice, sosa:Sensor ;
+                    iiotex:hasLocalId var:cabinid ;
+                    sosa:observes [
+                        a vp:Sound, sosa:ObservableProperty, iiot:MeasurementKind
+                    ] ;
+                    iiot:hasName var:id ;
+                    sosa:isHostedBy [
+                        a vp:Port, sosa:Platform ;
+                        iiotex:hasLocalId var:portid
+                    ] ;
+                    iiot:hasLocation [
+                        a iiot:Location ;
+                        geosparql:asWKT var:geo
+                    ] .
+                </align:entity2>
+                <align:relation>=</align:relation>
+                <sripas:transformation rdf:parseType="Literal">
+                    <function about="str">
+                        <param order="1" about="&sripas;node_cabinid"/>
+                        <return about="&sripas;node_cabin_sid"/>
+                    </function>
+                    <function about="CONCAT">
+                        <param order="1" val="http://www.inter-iot.eu/wso2port/sound/cabins/"/>
+                        <param order="2" about="&sripas;node_cabin_sid"/>
+                        <return about="&sripas;node_cabin_id_uri"/>
+                    </function>
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_cabin_id_uri"/>
+                        <return about="&sripas;node_cabin"/>
+                    </function>
+                    <function about="str">
+                        <param order="1" about="&sripas;node_lat"/>
+                        <return about="&sripas;node_slat"/>
+                    </function>
+                    <function about="str">
+                        <param order="1" about="&sripas;node_long"/>
+                        <return about="&sripas;node_slong"/>
+                    </function>
+                    <function about="concat">
+                        <param order="1" val="Point("/>
+                        <param order="2" about="&sripas;node_slat"/>
+                        <param order="3" val=" "/>
+                        <param order="4" about="&sripas;node_slong"/>
+                        <param order="5" val=")"/>
+                        <return about="&sripas;node_geo"/>
+                    </function>
+                </sripas:transformation>
+                <sripas:filters rdf:parseType="Literal">
+                    <filter about="&sripas;node_lat" datatype="&xsd;float"/>
+                    <filter about="&sripas;node_long" datatype="&xsd;float"/>
+                    <filter about="&sripas;node_slat" datatype="&xsd;string"/>
+                    <filter about="&sripas;node_slong" datatype="&xsd;string"/>
+                </sripas:filters>
+                <sripas:typings rdf:parseType="Literal">
+                    <typing about="&sripas;node_geo" datatype="&geo-sf;wktLiteral"/>
+                </sripas:typings>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#1_sound_measurement">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX a pt:soundMeasurements ;
+                    pt:hasArray var:array .
+                    var:array a pt:Array ;
+                    pt:hasElement var:elem .
+                    var:elem  a pt:Element ;
+                    pt:hasmeasurementId var:meas_id ;
+                    pt:hascabinId var:cabinid ;
+                    pt:hasstartDate var:startdate ;
+                    pt:hasendDate var:enddate ;
+                    pt:hasmaxSoundLevel var:max ;
+                    pt:hasminSoundLevel var:min ;
+                    pt:hasaverageSoundLevel var:avg .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    [
+                        a sosa:Observation, vp:SoundMeasurement ;
+                        iiotex:hasLocalId var:meas_id ;
+                        sosa:madeBySensor var:cabin ;
+                        sosa:hasResult [
+                            a vp:MinSoundLevel, sosa:Result ;
+                            iiot:hasResultValue var:min
+                        ], [
+                        a vp:MaxSoundLevel, sosa:Result ;
+                        iiot:hasResultValue var:max
+                        ], [
+                        a vp:AvgSoundLevel, sosa:Result ;
+                        iiot:hasResultValue var:avg
+                        ] ;
+                        sosa:phenomenonTime [
+                            a time:Interval ;
+                            time:hasBeginning [ a time:Instant ; time:inXSDDateTimeStamp var:startdate ] ;
+                            time:hasEnd [a time:Instant ; time:inXSDDateTimeStamp var:enddate ]
+                        ]
+                    ] .
+                    var:cabin a vp:SoundCabin, iiot:IoTDevice, sosa:Sensor ;
+                    iiotex:hasLocalId var:cabinid .
+                </align:entity2>
+                <align:relation>=</align:relation>
+                <sripas:transformation rdf:parseType="Literal">
+                    <function about="str">
+                        <param order="1" about="&sripas;node_cabinid"/>
+                        <return about="&sripas;node_sid"/>
+                    </function>
+                    <function about="CONCAT">
+                        <param order="1" val="http://www.inter-iot.eu/wso2port/sound/cabins/"/>
+                        <param order="2" about="&sripas;node_sid"/>
+                        <return about="&sripas;node_id_uri"/>
+                    </function>
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_id_uri"/>
+                        <return about="&sripas;node_cabin"/>
+                    </function>
+                    <function about="CONCAT">
+                        <param order="1" val="&vp;Cabin_Sound_"/>
+                        <param order="2" about="&sripas;node_sid"/>
+                        <return about="&sripas;node_sound_id"/>
+                    </function>
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_sound_id"/>
+                        <return about="&sripas;node_sensor_uri"/>
+                    </function>
+                </sripas:transformation>
+                <sripas:typings rdf:parseType="Literal">
+                    <sripas:typing about="&sripas;node_startdate" datatype="&xsd;dateTimeStamp"/>
+                    <sripas:typing about="&sripas;node_enddate" datatype="&xsd;dateTimeStamp"/>
+                </sripas:typings>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#1_lights">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX a pt:lights ;
+                    pt:hasArray var:array .
+                    var:array a pt:Array ;
+                    pt:hasElement var:elem .
+                    var:elem a pt:Element ;
+                    pt:hasconsumption var:consumption ;
+                    pt:hasdescription var:desc ;
+                    pt:hasdimmer var:dimmer ;
+                    pt:hasisConnected var:connected ;
+                    pt:haslampPostId var:lampId ;
+                    pt:haslightId var:lightId ;
+                    pt:haslastUpdate var:update ;
+                    pt:haspowerState var:power ;
+                    pt:haslatitude var:lat ;
+                    pt:haslongitude var:long .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:lamp a vp:LampPost, iiot:IoTDevice ;
+                    iiotex:hasLocalId var:lampId ;
+                    sosa:hosts var:light ;
+                    iiot:hasLocation [
+                        a iiot:Location ;
+                        geosparql:asWKT var:geo
+                    ] .
+                    var:light a sosa:Sensor, vp:LightMeter ;
+                    iiotex:hasLocalId var:lightId ;
+                    iiot:hasDescription var:desc ;
+                    sosa:observes [
+                        a vp:Light, sosa:ObservableProperty, iiot:MeasurementKind
+                    ] ;
+                    vp:hasPowerState var:power ;
+                    vp:isConnected var:connected .
+                    [
+                        a sosa:Observation, vp:Lights ;
+                        sosa:madeBySensor var:light ;
+                        sosa:hasResult [
+                        a vp:LightDimmer, sosa:Result ; iiot:hasResultValue var:dimmer
+                        ], [
+                        a vp:LightConsumption, sosa:Result ; iiot:hasResultValue var:consumption
+                        ] ;
+                        sosa:phenomenonTime [
+                            a time:Instant ; time:inXSDDateTimeStamp var:update
+                        ]
+                    ] .
+                </align:entity2>
+                <align:relation>=</align:relation>
+                <sripas:transformation rdf:parseType="Literal">
+                    <function about="REPLACE">
+                        <param order="1" about="&sripas;node_lampId"/>
+                        <param order="2" val=" "/>
+                        <param order="3" val="_"/>
+                        <return about="&sripas;node_lamp_r"/>
+                    </function>
+                    <function about="CONCAT">
+                        <param order="1" val="http://www.inter-iot.eu/wso2port/lampPost/"/>
+                        <param order="2" about="&sripas;node_lamp_r"/>
+                        <return about="&sripas;node_lamp_str"/>
+                    </function>
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_lamp_str"/>
+                        <return about="&sripas;node_lamp"/>
+                    </function>
+                    <function about="CONCAT">
+                        <param order="1" val="http://www.inter-iot.eu/wso2port/light/"/>
+                        <param order="2" about="&sripas;node_lightId"/>
+                        <return about="&sripas;node_light_str"/>
+                    </function>
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_light_str"/>
+                        <return about="&sripas;node_light"/>
+                    </function>
+                    <function about="str">
+                        <param order="1" about="&sripas;node_lat"/>
+                        <return about="&sripas;node_slat"/>
+                    </function>
+                    <function about="str">
+                        <param order="1" about="&sripas;node_long"/>
+                        <return about="&sripas;node_slong"/>
+                    </function>
+                    <function about="concat">
+                        <param order="1" val="Point("/>
+                        <param order="2" about="&sripas;node_slat"/>
+                        <param order="3" val=" "/>
+                        <param order="4" about="&sripas;node_slong"/>
+                        <param order="5" val=")"/>
+                        <return about="&sripas;node_geo"/>
+                    </function>
+                </sripas:transformation>
+                <sripas:filters rdf:parseType="Literal">
+                    <filter about="&sripas;node_lat" datatype="&xsd;float"/>
+                    <filter about="&sripas;node_long" datatype="&xsd;float"/>
+                    <filter about="&sripas;node_slat" datatype="&xsd;string"/>
+                    <filter about="&sripas;node_slong" datatype="&xsd;string"/>
+                </sripas:filters>
+                <sripas:typings rdf:parseType="Literal">
+                    <sripas:typing about="&sripas;node_geo" datatype="&geo-sf;wktLiteral"/>
+                    <sripas:typing about="&sripas;node_update" datatype="&xsd;dateTimeStamp"/>
+                </sripas:typings>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#1_presenceSensors">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX a pt:presenceSensors ;
+                    pt:hasArray var:array .
+                    var:array a pt:Array ;
+                    pt:hasElement var:elem .
+                    var:elem a pt:Element ;
+                    pt:haspresenceSensorId var:id ;
+                    pt:hasdescription var:desc ;
+                    pt:hastype var:type ;
+                    pt:haslatitude var:lat ;
+                    pt:haslongitude var:long .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:sensor a vp:PresenceSensor, iiot:IoTDevice, sosa:Sensor ;
+                    iiotex:hasLocalId var:id ;
+                    iiot:hasDescription var:desc ;
+                    iiot:hasLocation [
+                        a iiot:Location ; geosparql:asWKT var:geo
+                    ] ;
+                    vp:hasSensorType var:type .
+                </align:entity2>
+                <align:relation>=</align:relation>
+                <sripas:transformation rdf:parseType="Literal">
+                    <function about="REPLACE">
+                        <param order="1" about="&sripas;node_id"/>
+                        <param order="2" val=" "/>
+                        <param order="3" val="_"/>
+                        <return about="&sripas;node_sensor_r"/>
+                    </function>
+                    <function about="CONCAT">
+                        <param order="1" val="http://www.inter-iot.eu/wso2port/presenceSensors/"/>
+                        <param order="2" about="&sripas;node_sensor_r"/>
+                        <return about="&sripas;node_sensor_str"/>
+                    </function>
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_sensor_str"/>
+                        <return about="&sripas;node_sensor"/>
+                    </function>
+                    <function about="str">
+                        <param order="1" about="&sripas;node_lat"/>
+                        <return about="&sripas;node_slat"/>
+                    </function>
+                    <function about="str">
+                        <param order="1" about="&sripas;node_long"/>
+                        <return about="&sripas;node_slong"/>
+                    </function>
+                    <function about="concat">
+                        <param order="1" val="Point("/>
+                        <param order="2" about="&sripas;node_slat"/>
+                        <param order="3" val=" "/>
+                        <param order="4" about="&sripas;node_slong"/>
+                        <param order="5" val=")"/>
+                        <return about="&sripas;node_geo"/>
+                    </function>
+                </sripas:transformation>
+                <sripas:filters rdf:parseType="Literal">
+                    <filter about="&sripas;node_lat" datatype="&xsd;float"/>
+                    <filter about="&sripas;node_long" datatype="&xsd;float"/>
+                    <filter about="&sripas;node_slat" datatype="&xsd;string"/>
+                    <filter about="&sripas;node_slong" datatype="&xsd;string"/>
+                </sripas:filters>
+                <sripas:typings rdf:parseType="Literal">
+                    <sripas:typing about="&sripas;node_geo" datatype="&geo-sf;wktLiteral"/>
+                </sripas:typings>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#1_presenceSensorObservations">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX a pt:presenceSensorObservations ;
+                    pt:hasArray var:array .
+                    var:array a pt:Array ;
+                    pt:hasElement var:elem .
+                    var:elem a pt:Element ;
+                    pt:haspresenceSensorId var:id ;
+                    pt:hasobservationId var:obsId ;
+                    pt:hasdetectionDate var:date .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:sensor a vp:PresenceSensor, iiot:IoTDevice, sosa:Sensor ;
+                    iiotex:hasLocalId var:id .
+                    var:obs a sosa:Observation, vp:PresenceSensorObservations ;
+                    iiotex:hasLocalId var:obsId ;
+                    sosa:madeBySensor var:sensor ;
+                    sosa:phenomenonTime [
+                        a time:Instant ; time:inXSDDateTimeStamp var:date
+                    ] .
+                </align:entity2>
+                <align:relation>=</align:relation>
+                <sripas:transformation rdf:parseType="Literal">
+                    <function about="REPLACE">
+                        <param order="1" about="&sripas;node_id"/>
+                        <param order="2" val=" "/>
+                        <param order="3" val="_"/>
+                        <return about="&sripas;node_sensor_r"/>
+                    </function>
+                    <function about="CONCAT">
+                        <param order="1" val="http://www.inter-iot.eu/wso2port/presenceSensors/"/>
+                        <param order="2" about="&sripas;node_sensor_r"/>
+                        <return about="&sripas;node_sensor_str"/>
+                    </function>
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_sensor_str"/>
+                        <return about="&sripas;node_sensor"/>
+                    </function>
+                    <function about="STR">
+                        <param order="1" about="&sripas;node_obsId"/>
+                        <return about="&sripas;node_obsId_str"/>
+                    </function>
+                    <function about="CONCAT">
+                        <param order="1" val="http://www.inter-iot.eu/wso2port/presenceSensors/"/>
+                        <param order="2" about="&sripas;node_sensor_r"/>
+                        <param order="3" val="/"/>
+                        <param order="4" about="&sripas;node_obsId_str"/>
+                        <return about="&sripas;node_obs_str"/>
+                    </function>
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_obs_str"/>
+                        <return about="&sripas;node_obs"/>
+                    </function>
+                </sripas:transformation>
+                <sripas:typings rdf:parseType="Literal">
+                    <sripas:typing about="&sripas;node_date" datatype="&xsd;dateTimeStamp"/>
+                </sripas:typings>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#1_listDevices_emissions_sensor">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:array a pt:Array ;
+                    pt:hasElement var:elem .
+                    var:elem a pt:Element ;
+                    pt:hasdeviceId var:device_id ;
+                    pt:hashostedBy var:host_id ;
+                    pt:hasname var:name ;
+                    pt:hasproperties "emissions" ;
+                    pt:hastype "sensor" .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:array a pt:Array .
+                    var:device a iiot:IoTDevice, sosa:Sensor, vp:EmissionCabin ;
+                    iiot:hasName var:name ;
+                    iiotex:hasLocalId var:device_id ;
+                    sosa:isHostedBy var:host ;
+                    sosa:observes [
+                    a vp:Emissions, sosa:ObservableProperty, iiot:MeasurementKind
+                    ] .
+                    var:host a sosa:Platform .
+                </align:entity2>
+                <align:relation>=</align:relation>
+                <sripas:transformation rdf:parseType="Literal">
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_device_id"/>
+                        <return about="&sripas;node_device"/>
+                    </function>
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_host_id"/>
+                        <return about="&sripas;node_host"/>
+                    </function>
+                </sripas:transformation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#2_listDevices_lighting_actuator">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:array a pt:Array ;
+                    pt:hasElement var:elem .
+                    var:elem a pt:Element ;
+                    pt:hasdeviceId var:device_id ;
+                    pt:hashostedBy var:host_id ;
+                    pt:hasname var:name ;
+                    pt:hasproperties "lighting" ;
+                    pt:hastype "actuator" .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:array a pt:Array .
+                    var:device a iiot:IoTDevice, sosa:Sensor, vp:LightMeter ;
+                    iiot:hasName var:name ;
+                    iiotex:hasLocalId var:device_id ;
+                    sosa:isHostedBy var:host ;
+                    sosa:observes [
+                    a vp:Light, sosa:ObservableProperty, iiot:MeasurementKind
+                    ] .
+                    var:host a sosa:Platform .
+                </align:entity2>
+                <align:relation>=</align:relation>
+                <sripas:transformation rdf:parseType="Literal">
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_device_id"/>
+                        <return about="&sripas;node_device"/>
+                    </function>
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_host_id"/>
+                        <return about="&sripas;node_host"/>
+                    </function>
+                </sripas:transformation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#3_listDevices_presence_sensor">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:array a pt:Array ;
+                    pt:hasElement var:elem .
+                    var:elem a pt:Element ;
+                    pt:hasdeviceId var:device_id ;
+                    pt:hashostedBy var:host_id ;
+                    pt:hasname var:name ;
+                    pt:hasproperties "presence_sensor" ;
+                    pt:hastype "sensor" .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:array a pt:Array .
+                    var:device a iiot:IoTDevice, sosa:Sensor, vp:PresenceSensor ;
+                    iiot:hasName var:name ;
+                    iiotex:hasLocalId var:device_id ;
+                    sosa:isHostedBy var:host ;
+                    sosa:observes [
+                    a vp:Presence, sosa:ObservableProperty, iiot:MeasurementKind
+                    ] .
+                    var:host a sosa:Platform .
+                </align:entity2>
+                <align:relation>=</align:relation>
+                <sripas:transformation rdf:parseType="Literal">
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_device_id"/>
+                        <return about="&sripas;node_device"/>
+                    </function>
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_host_id"/>
+                        <return about="&sripas;node_host"/>
+                    </function>
+                </sripas:transformation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#4_listDevices_weather_sensor">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:array a pt:Array ;
+                    pt:hasElement var:elem .
+                    var:elem a pt:Element ;
+                    pt:hasdeviceId var:device_id ;
+                    pt:hashostedBy var:host_id ;
+                    pt:hasname var:name ;
+                    pt:hasproperties "weather" ;
+                    pt:hastype "sensor" .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:array a pt:Array .
+                    var:device a iiot:IoTDevice, sosa:Sensor, vp:MeteoCabin ;
+                    iiot:hasName var:name ;
+                    iiotex:hasLocalId var:device_id ;
+                    sosa:isHostedBy var:host ;
+                    sosa:observes [
+                    a vp:Weather, sosa:ObservableProperty, iiot:MeasurementKind
+                    ] .
+                    var:host a sosa:Platform .
+                </align:entity2>
+                <align:relation>=</align:relation>
+                <sripas:transformation rdf:parseType="Literal">
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_device_id"/>
+                        <return about="&sripas;node_device"/>
+                    </function>
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_host_id"/>
+                        <return about="&sripas;node_host"/>
+                    </function>
+                </sripas:transformation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#5_listDevices_sound_sensor">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:array a pt:Array ;
+                    pt:hasElement var:elem .
+                    var:elem a pt:Element ;
+                    pt:hasdeviceId var:device_id ;
+                    pt:hashostedBy var:host_id ;
+                    pt:hasname var:name ;
+                    pt:hasproperties "sound" ;
+                    pt:hastype "sensor" .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:array a pt:Array .
+                    var:device a iiot:IoTDevice, sosa:Sensor, vp:SoundCabin ;
+                    iiot:hasName var:name ;
+                    iiotex:hasLocalId var:device_id ;
+                    sosa:isHostedBy var:host ;
+                    sosa:observes [
+                    a vp:Sound, sosa:ObservableProperty, iiot:MeasurementKind
+                    ] .
+                    var:host a sosa:Platform .
+                </align:entity2>
+                <align:relation>=</align:relation>
+                <sripas:transformation rdf:parseType="Literal">
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_device_id"/>
+                        <return about="&sripas;node_device"/>
+                    </function>
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_host_id"/>
+                        <return about="&sripas;node_host"/>
+                    </function>
+                </sripas:transformation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#6_listDevices_exit_sensor">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:array a pt:Array ;
+                    pt:hasElement var:elem .
+                    var:elem a pt:Element ;
+                    pt:hasdeviceId var:device_id ;
+                    pt:hashostedBy var:host_id ;
+                    pt:hasname var:name ;
+                    pt:hasproperties "gate" ;
+                    pt:hastype "exit" .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:array a pt:Array .
+                    var:device a iiot:IoTDevice, sosa:Sensor, vp:ExitSensor, vp:GateSensor ;
+                    iiot:hasName var:name ;
+                    iiotex:hasLocalId var:device_id ;
+                    sosa:isHostedBy var:host ;
+                    sosa:observes [
+                    a logiserv:Depart, sosa:ObservableProperty, iiot:MeasurementKind
+                    ] .
+                    var:host a sosa:Platform .
+                </align:entity2>
+                <align:relation>=</align:relation>
+                <sripas:transformation rdf:parseType="Literal">
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_device_id"/>
+                        <return about="&sripas;node_device"/>
+                    </function>
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_host_id"/>
+                        <return about="&sripas;node_host"/>
+                    </function>
+                </sripas:transformation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#7_listDevices_entry_sensor">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:array a pt:Array ;
+                    pt:hasElement var:elem .
+                    var:elem a pt:Element ;
+                    pt:hasdeviceId var:device_id ;
+                    pt:hashostedBy var:host_id ;
+                    pt:hasname var:name ;
+                    pt:hasproperties "gate" ;
+                    pt:hastype "entry" .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:array a pt:Array .
+                    var:device a iiot:IoTDevice, sosa:Sensor, vp:EntrySensor, vp:GateSensor ;
+                    iiot:hasName var:name ;
+                    iiotex:hasLocalId var:device_id ;
+                    sosa:isHostedBy var:host ;
+                    sosa:observes [
+                        a logiserv:Arrive, sosa:ObservableProperty, iiot:MeasurementKind
+                    ] .
+                    var:host a sosa:Platform .
+                </align:entity2>
+                <align:relation>=</align:relation>
+                <sripas:transformation rdf:parseType="Literal">
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_device_id"/>
+                        <return about="&sripas;node_device"/>
+                    </function>
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_host_id"/>
+                        <return about="&sripas;node_host"/>
+                    </function>
+                </sripas:transformation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#7_listDevices_gate_sensor">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:array a pt:Array ;
+                    pt:hasElement var:elem .
+                    var:elem a pt:Element ;
+                    pt:hasdeviceId var:device_id ;
+                    pt:hashostedBy var:host_id ;
+                    pt:hasname var:name ;
+                    pt:hasproperties "gate" ;
+                    pt:hastype "sensor" .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:array a pt:Array .
+                    var:device a iiot:IoTDevice, sosa:Sensor, vp:GateSensor ;
+                    iiot:hasName var:name ;
+                    iiotex:hasLocalId var:device_id ;
+                    sosa:isHostedBy var:host .
+                    var:host a sosa:Platform .
+                </align:entity2>
+                <align:relation>=</align:relation>
+                <sripas:transformation rdf:parseType="Literal">
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_device_id"/>
+                        <return about="&sripas;node_device"/>
+                    </function>
+                    <function about="IRI">
+                        <param order="1" about="&sripas;node_host_id"/>
+                        <return about="&sripas;node_host"/>
+                    </function>
+                </sripas:transformation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#8_listDevices_clear">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:listDevices a pt:listDevices ;
+                    pt:hasArray var:array .
+                    var:array a pt:Array .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                </align:entity2>
+                <align:relation>=</align:relation>
+            </align:Cell>
+        </align:map>
+
+    </align:Alignment>
+</rdf:RDF>

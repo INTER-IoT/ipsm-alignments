@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE RDF
+        [
+                <!ENTITY sripas "http://www.inter-iot.eu/sripas#">
+                <!ENTITY var "http://www.inter-iot.eu/sripas#node_">
+                <!ENTITY sosa "http://www.w3.org/ns/sosa/">
+                <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+                <!ENTITY iiot "http://inter-iot.eu/GOIoTP#">
+                <!ENTITY iiotex "http://inter-iot.eu/GOIoTPex#">
+                <!ENTITY medex "http://inter-iot.eu/medex#">
+                <!ENTITY time "http://www.w3.org/2006/time#">
+                <!ENTITY sweet_units "http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#">
+                <!ENTITY bc "http://inter-iot.eu/syntax/BodyCloud#">
+                <!ENTITY healthMeasurement "http://ontology.universaal.org/HealthMeasurement.owl#">
+                <!ENTITY personalHealthDevice "http://ontology.universAAL.org/PersonalHealthDevice.owl#">
+                ]
+        >
+<rdf:RDF  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+          xmlns:sripas="http://www.inter-iot.eu/sripas#"
+          xmlns:var="http://www.inter-iot.eu/sripas#node_"
+          xmlns:sosa="http://www.w3.org/ns/sosa/"
+          xmlns:iiot="http://inter-iot.eu/GOIoTP#"
+          xmlns:iiotex="http://inter-iot.eu/GOIoTPex#"
+          xmlns:time="http://www.w3.org/2006/time#"
+          xmlns:medex="http://inter-iot.eu/medex#"
+          xmlns:bc="http://inter-iot.eu/syntax/BodyCloud#"
+          xmlns:align="http://knowledgeweb.semanticweb.org/heterogeneity/alignment#"
+          xmlns:dcelem="http://purl.org/dc/elements/1.1/"
+          xmlns:exmo="http://exmo.inrialpes.fr/align/ext/1.0/#"
+          xmlns:sweet_units="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#"
+          xmlns:healthMeasurement="http://ontology.universaal.org/HealthMeasurement.owl#"
+          xmlns:personalHealthDevice="http://ontology.universAAL.org/PersonalHealthDevice.owl#"
+          xmlns="http://www.inter-iot.eu/sripas#">
+    <align:Alignment>
+
+        <dcelem:title>BodyCloud_CO_align</dcelem:title>
+        <exmo:version>2.0.2</exmo:version>
+        <dcelem:creator>SRIPAS</dcelem:creator>
+        <dcelem:description>Alignment between BodyCloud messages with context events and INTER-IoT central ontology.</dcelem:description>
+
+        <align:xml>yes</align:xml>
+        <align:level>2IPSM</align:level>
+        <align:type>**</align:type>
+        <align:method>manual</align:method>
+        <dcelem:date>01-01-2018</dcelem:date>
+        <sripas:cellFormat>
+            <iiot:DataFormat rdf:about="http://inter-iot.eu/sripas#turtle" />
+        </sripas:cellFormat>
+
+        <align:onto1>
+            <align:Ontology rdf:about="http://inter-iot.eu/syntax/BodyCloud#">
+                <align:formalism>
+                    <align:Formalism align:name="OWL2.0" align:uri="http://www.w3.org/2002/07/owl#" />
+                </align:formalism>
+            </align:Ontology>
+        </align:onto1>
+        <align:onto2>
+            <align:Ontology rdf:about="http://inter-iot.eu/GOIoTPex#">
+                <align:formalism>
+                    <align:Formalism align:name="OWL2.0" align:uri="http://www.w3.org/2002/07/owl#" />
+                </align:formalism>
+            </align:Ontology>
+        </align:onto2>
+
+        <sripas:steps rdf:parseType="Collection">
+            <sripas:step sripas:order="1" sripas:cell="http://www.inter-iot.eu/sripas#1_observation"/>
+            <sripas:step sripas:order="2" sripas:cell="http://www.inter-iot.eu/sripas#2_res_weight"/>
+            <sripas:step sripas:order="3" sripas:cell="http://www.inter-iot.eu/sripas#2_res_bp"/>
+            <sripas:step sripas:order="4" sripas:cell="http://www.inter-iot.eu/sripas#2_res_act"/>
+            <sripas:step sripas:order="5" sripas:cell="http://www.inter-iot.eu/sripas#2_res_quest"/>
+            <sripas:step sripas:order="6" sripas:cell="http://www.inter-iot.eu/sripas#3_dev_weight"/>
+            <sripas:step sripas:order="7" sripas:cell="http://www.inter-iot.eu/sripas#3_dev_bp"/>
+            <sripas:step sripas:order="8" sripas:cell="http://www.inter-iot.eu/sripas#3_dev_act"/>
+            <sripas:step sripas:order="9" sripas:cell="http://www.inter-iot.eu/sripas#3_dev_quest"/>
+            <sripas:step sripas:order="10" sripas:cell="http://www.inter-iot.eu/sripas#4_user"/>
+            <sripas:step sripas:order="11" sripas:cell="http://www.inter-iot.eu/sripas#5_time"/>
+        </sripas:steps>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#1_observation">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX a bc:BodyCloudObject .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX a sosa:Observation .
+                </align:entity2>
+                <relation>=</relation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#2_res_weight">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX bc:hasTypeMessage "weight_scale" ;
+                        bc:hasData var:CTY .
+                    var:CTY a bc:BodyCloudAttributes ;
+                        bc:hasWeight var:CTZ .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX bc:hasTypeMessage "weight_scale" ;
+                        sosa:hasResult var:CTY .
+                    var:CTY a sosa:Result, healthMeasurement:PersonWeight ;
+                        iiot:hasValue var:CTZ ;
+                        iiot:hasUnit sweet_units:kilogram .
+                </align:entity2>
+                <align:relation>=</align:relation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+        <align:Cell rdf:about="http://www.inter-iot.eu/sripas#2_res_bp">
+            <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                var:CTX bc:hasTypeMessage "blood_pressure" ;
+                    bc:hasData var:CTY .
+                var:CTY a bc:BodyCloudAttributes ;
+                    bc:hasSystolic var:CTS ;
+                    bc:hasDiastolic var:CTD .
+            </align:entity1>
+            <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                var:CTX bc:hasTypeMessage "blood_pressure" ;
+                    sosa:hasResult [
+                        a sosa:Result, medex:SystolicBloodPressure ;
+                        iiot:hasValue var:CTS ;
+                    ] ;
+                    sosa:hasResult [
+                        a sosa:Result, medex:DiastolicBloodPressure ;
+                        iiot:hasValue var:CTD ;
+                    ] .
+            </align:entity2>
+            <align:relation>=</align:relation>
+            <sripas:typings rdf:parseType="Literal">
+                <sripas:typing about="&var;CTS" datatype="&xsd;int"/>
+                <sripas:typing about="&var;CTD" datatype="&xsd;int"/>
+            </sripas:typings>
+        </align:Cell>
+    </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#2_res_act">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX bc:hasTypeMessage "activity" ;
+                        bc:hasData var:CTY .
+                    var:CTY a bc:BodyCloudAttributes ;
+                        bc:hasDuration var:CTD ;
+                        bc:hasSteps var:CTS .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    sripas:node_CTX bc:hasTypeMessage "activity" ;
+                        sosa:hasResult [
+                            a sosa:Result, medex:ActivityDuration ;
+                            iiot:hasValue var:CTD ;
+                            iiot:hasUnit sweet_units:minute ;
+                        ]   ;
+                        sosa:hasResult [
+                            a sosa:Result, medex:ActivitySteps ;
+                            iiot:hasValue var:CTS ;
+                        ]   .
+                </align:entity2>
+                <align:relation>=</align:relation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#2_res_quest">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX bc:hasData var:A .
+                    var:A a bc:BodyCloudAttributes ;
+                        bc:hasQuestion_1 var:Q1 ;
+                        bc:hasQuestion_2 var:Q2 ;
+                        bc:hasQuestion_3 var:Q3 ;
+                        bc:hasQuestion_4 var:Q4 ;
+                        bc:hasQuestion_5 var:Q5 ;
+                        bc:hasQuestion_6 var:Q6 ;
+                        bc:hasQuestion_7 var:Q7 ;
+                        bc:hasQuestion_8 var:Q8 ;
+                        bc:hasQuestion_9 var:Q9 ;
+                        bc:hasQuestion_10 var:Q10 ;
+                        bc:hasQuestion_11 var:Q11 .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX sosa:hasResult [
+                        a sosa:Result, medex:Question_1 ;
+                        iiot:hasValue var:Q1 ;
+                    ] ;
+                    sosa:hasResult [
+                        a sosa:Result, medex:Question_2 ;
+                        iiot:hasValue var:Q2 ;
+                    ] ;
+                    sosa:hasResult [
+                        a sosa:Result, medex:Question_3 ;
+                        iiot:hasValue var:Q3 ;
+                    ] ;
+                    sosa:hasResult [
+                        a sosa:Result, medex:Question_4 ;
+                        iiot:hasValue var:Q4 ;
+                    ] ;
+                    sosa:hasResult [
+                        a sosa:Result, medex:Question_5 ;
+                        iiot:hasValue var:Q5 ;
+                    ] ;
+                    sosa:hasResult [
+                        a sosa:Result, medex:Question_6 ;
+                        iiot:hasValue var:Q6 ;
+                    ] ;
+                    sosa:hasResult [
+                        a sosa:Result, medex:Question_7 ;
+                        iiot:hasValue var:Q7 ;
+                    ] ;
+                    sosa:hasResult [
+                        a sosa:Result, medex:Question_8 ;
+                        iiot:hasValue var:Q8 ;
+                    ] ;
+                    sosa:hasResult [
+                        a sosa:Result, medex:Question_9 ;
+                        iiot:hasValue var:Q9 ;
+                    ] ;
+                    sosa:hasResult [
+                        a sosa:Result, medex:Question_10 ;
+                        iiot:hasValue var:Q10 ;
+                    ] ;
+                    sosa:hasResult [
+                        a sosa:Result, medex:Question_11 ;
+                        iiot:hasValue var:Q11 ;
+                    ] ;
+                </align:entity2>
+                <align:relation>=</align:relation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#3_dev_weight">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX bc:hasTypeMessage "weight_scale" ;
+                        bc:hasDeviceId var:CTY .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX sosa:madeBySensor [
+                        a sosa:Sensor, iiot:IoTDevice, personalHealthDevice:WeighingScale
+                    ] .
+                </align:entity2>
+                <align:relation>=</align:relation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#3_dev_bp">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX bc:hasTypeMessage "blood_pressure" ;
+                        bc:hasDeviceId var:CTY .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX sosa:madeBySensor [
+                        a sosa:Sensor, iiot:IoTDevice, personalHealthDevice:BloodPressureSensor
+                    ] .
+                </align:entity2>
+                <align:relation>=</align:relation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#3_dev_act">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX bc:hasTypeMessage "activity" ;
+                        bc:hasDeviceId var:CTY ;
+                        bc:hasDay var:CTZ .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX sosa:madeBySensor [
+                        a sosa:Sensor, iiot:IoTDevice, medex:Pedometer
+                    ] ;
+                    medex:hasActivityDay var:CTZ .
+                </align:entity2>
+                <align:relation>=</align:relation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#3_dev_quest">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX bc:hasTypeMessage "questionnaire" .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX sosa:madeBySensor [
+                        a sosa:Sensor, iiot:IoTDevice, medex:Questionnaire
+                    ] .
+                </align:entity2>
+                <align:relation>=</align:relation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#4_user">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX sosa:madeBySensor var:CTZ ;
+                        bc:hasUserId var:CTY .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX sosa:madeBySensor var:CTZ .
+                    var:CTZ iiot:hasUser var:uri .
+                    var:uri a iiot:User ;
+                        iiotex:hasLocalId var:CTY .
+                </align:entity2>
+                <align:relation>=</align:relation>
+                <sripas:transformation rdf:parseType="Literal">
+                    <sripas:function sripas:about="IRI">
+                        <sripas:param sripas:order="1" sripas:about="&var;CTY"/>
+                        <sripas:return sripas:about="&var;uri"/>
+                    </sripas:function>
+                </sripas:transformation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#5_time">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX a sosa:Observation ;
+                        bc:hasTimestamp var:time .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX a sosa:Observation ;
+                    sosa:phenomenonTime [
+                        a time:Instant ;
+                        time:numericPosition var:time
+                    ] .
+                </align:entity2>
+                <align:relation>=</align:relation>
+                <sripas:typings rdf:parseType="Literal">
+                    <sripas:typing sripas:about="&sripas;node_time" sripas:datatype="&xsd;decimal"/>
+                </sripas:typings>
+            </align:Cell>
+        </align:map>
+    </align:Alignment>
+</rdf:RDF>

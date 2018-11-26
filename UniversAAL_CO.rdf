@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE RDF
+        [
+                <!ENTITY sripas "http://www.inter-iot.eu/sripas#">
+                <!ENTITY var "http://www.inter-iot.eu/sripas#node_">
+                <!ENTITY sosa "http://www.w3.org/ns/sosa/">
+                <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#">
+                <!ENTITY context "http://ontology.universAAL.org/Context.owl#">
+                <!ENTITY device "http://ontology.universAAL.org/Device.owl#">
+                <!ENTITY measurement "http://ontology.universaal.org/Measurement.owl#">
+                <!ENTITY phThing "http://ontology.universaal.org/PhThing.owl#">
+                <!ENTITY healthMeasurement "http://ontology.universaal.org/HealthMeasurement.owl#">
+                <!ENTITY iiot "http://inter-iot.eu/GOIoTP#">
+                <!ENTITY iiotex "http://inter-iot.eu/GOIoTPex#">
+                <!ENTITY medex "http://inter-iot.eu/medex#">
+                <!ENTITY time "http://www.w3.org/2006/time#">
+                <!ENTITY sweet_units "http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#">
+                <!ENTITY profile "http://ontology.universAAL.org/Profile.owl#">
+                <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+                <!ENTITY uaal "http://ontology.universAAL.org/uAAL.owl#">
+                ]
+        >
+<rdf:RDF  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+          xmlns:sripas="http://www.inter-iot.eu/sripas#"
+          xmlns:var="http://www.inter-iot.eu/sripas#node_"
+          xmlns:align="http://knowledgeweb.semanticweb.org/heterogeneity/alignment#"
+          xmlns:dcelem="http://purl.org/dc/elements/1.1/"
+          xmlns:exmo="http://exmo.inrialpes.fr/align/ext/1.0/#"
+          xmlns="http://www.inter-iot.eu/sripas#"
+          xmlns:sosa="http://www.w3.org/ns/sosa/"
+          xmlns:context="http://ontology.universAAL.org/Context.owl#"
+          xmlns:iiot="http://inter-iot.eu/GOIoTP#"
+          xmlns:time="http://www.w3.org/2006/time#"
+          xmlns:device="http://ontology.universAAL.org/Device.owl#"
+          xmlns:measurement="http://ontology.universaal.org/Measurement.owl#"
+          xmlns:healthMeasurement="http://ontology.universaal.org/HealthMeasurement.owl#"
+          xmlns:profile="http://ontology.universAAL.org/Profile.owl#"
+          xmlns:phThing="http://ontology.universaal.org/PhThing.owl#"
+          xmlns:sweet_units="http://sweet.jpl.nasa.gov/2.3/reprSciUnits.owl#"
+          xmlns:medex="http://inter-iot.eu/medex#"
+          xmlns:uaal="http://ontology.universAAL.org/uAAL.owl#"
+>
+    <align:Alignment>
+
+        <dcelem:title>UniversAAL_CO_align</dcelem:title>
+        <exmo:version>3.0.1</exmo:version>
+        <dcelem:creator>SRIPAS</dcelem:creator>
+        <dcelem:description>ADDED user data - Alignment between UniversAAL messages with context events and INTER-IoT central ontology.</dcelem:description>
+
+        <align:xml>yes</align:xml>
+        <align:level>2IPSM</align:level>
+        <align:type>**</align:type>
+        <align:method>manual</align:method>
+        <dcelem:date>2018-01-01</dcelem:date>
+        <sripas:cellFormat>
+            <iiot:DataFormat rdf:about="http://inter-iot.eu/sripas#turtle" />
+        </sripas:cellFormat>
+
+        <align:onto1>
+            <align:Ontology rdf:about="http://ontology.universAAL.org/Context.owl#">
+                <align:formalism>
+                    <align:Formalism align:name="OWL2.0" align:uri="http://www.w3.org/2002/07/owl#" />
+                </align:formalism>
+            </align:Ontology>
+        </align:onto1>
+        <align:onto2>
+            <align:Ontology rdf:about="http://inter-iot.eu/GOIoTPex#">
+                <align:formalism>
+                    <align:Formalism align:name="OWL2.0" align:uri="http://www.w3.org/2002/07/owl#" />
+                </align:formalism>
+            </align:Ontology>
+        </align:onto2>
+
+        <sripas:steps rdf:parseType="Collection">
+            <sripas:step sripas:order="1" sripas:cell="http://www.inter-iot.eu/sripas#1_change_type_event"/>
+            <sripas:step sripas:order="2" sripas:cell="http://www.inter-iot.eu/sripas#2_change_type_measurement"/>
+            <sripas:step sripas:order="3" sripas:cell="http://www.inter-iot.eu/sripas#3_change_type_device"/>
+            <sripas:step sripas:order="4" sripas:cell="http://www.inter-iot.eu/sripas#4_change_type_contextProvider"/>
+            <sripas:step sripas:order="5" sripas:cell="http://www.inter-iot.eu/sripas#5_change_obs_properties"/>
+            <sripas:step sripas:order="6" sripas:cell="http://www.inter-iot.eu/sripas#6_change_result_properties_weight"/>
+            <sripas:step sripas:order="7" sripas:cell="http://www.inter-iot.eu/sripas#6_change_result_properties_hr"/>
+            <sripas:step sripas:order="7" sripas:cell="http://www.inter-iot.eu/sripas#6_change_result_properties_bp"/>
+            <sripas:step sripas:order="8" sripas:cell="http://www.inter-iot.eu/sripas#7_change_user"/>
+        </sripas:steps>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#1_change_type_event">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX a context:ContextEvent .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX a sosa:Observation .
+                </align:entity2>
+                <align:relation>=</align:relation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#2_change_type_measurement">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTY a healthMeasurement:HealthMeasurement, measurement:Measurement .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTY a sosa:Result .
+                </align:entity2>
+                <align:relation>=</align:relation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#3_change_type_device">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTY a phThing:Device, phThing:PhysicalThing ;
+                        device:hasValue var:CTZ .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTZ a sosa:Sensor, iiot:IoTDevice .
+                </align:entity2>
+                <align:relation>=</align:relation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#4_change_type_contextProvider">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTZ a context:ContextProvider .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTZ a sosa:Platform, medex:Gauge .
+                </align:entity2>
+                <align:relation>=</align:relation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#5_change_obs_properties">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX rdf:predicate device:hasValue ;
+                        rdf:object var:CTZ ;
+                        rdf:subject var:CTY ;
+                        context:hasProvider var:CTP ;
+                        context:hasTimestamp var:time .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX sosa:hasResult var:CTZ ;
+                        sosa:madeBySensor var:CTY ;
+                        sosa:phenomenonTime [
+                            a time:Instant ;
+                            time:inTimePosition [
+                                a time:TimePosition ;
+                                    time:numericPosition var:time
+                            ]
+                        ] .
+                    var:CTY sosa:isHostedBy var:CTP .
+                </align:entity2>
+                <align:relation>=</align:relation>
+                <sripas:typings rdf:parseType="Literal">
+                    <sripas:typing sripas:about="&var;time" sripas:datatype="&xsd;decimal"/>
+                </sripas:typings>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#6_change_result_properties_weight">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX a healthMeasurement:PersonWeight ;
+                        measurement:value var:CTY .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX a healthMeasurement:PersonWeight ;
+                        iiot:hasValue var:CTY ;
+                        iiot:hasUnit sweet_units:kilogram .
+                </align:entity2>
+                <align:relation>=</align:relation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#6_change_result_properties_hr">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX a healthMeasurement:HeartRate ;
+                        measurement:value var:CTY .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX a healthMeasurement:HeartRate ;
+                        iiot:hasValue var:CTY .
+                </align:entity2>
+                <align:relation>=</align:relation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#6_change_result_properties_bp">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTO sosa:hasResult var:CTX .
+                    var:CTX a healthMeasurement:BloodPressure ;
+                        healthMeasurement:diastolicBloodPreassure var:CTY ;
+                        healthMeasurement:systolicBloodPreassure var:CTZ .
+                    var:CTY measurement:value var:dias .
+                    var:CTZ measurement:value var:sys .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTO sosa:hasResult var:CTY, var:CTZ .
+                    var:CTY a sosa:Result, medex:DiastolicBloodPressure ;
+                        iiot:hasValue var:dias .
+                    var:CTZ a sosa:Result, medex:SystolicBloodPressure ;
+                    iiot:hasValue var:sys .
+                </align:entity2>
+                <align:relation>=</align:relation>
+            </align:Cell>
+        </align:map>
+
+        <align:map>
+            <align:Cell rdf:about="http://www.inter-iot.eu/sripas#7_change_user">
+                <align:entity1 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX a sosa:Observation ;
+                        uaal:theInvolvedHumanUser var:CTY .
+                    var:CTY a profile:Caregiver .
+                </align:entity1>
+                <align:entity2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+                    var:CTX a sosa:Observation ;
+                        iiot:orderedByUser var:CTY .
+                    var:CTY a profile:Caregiver, iiot:User .
+                </align:entity2>
+                <align:relation>=</align:relation>
+            </align:Cell>
+        </align:map>
+    </align:Alignment>
+</rdf:RDF>
